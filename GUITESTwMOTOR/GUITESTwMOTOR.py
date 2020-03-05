@@ -27,7 +27,7 @@ class Window(Frame):
        
         #Labels
         #separated for my own clarity, these are used to load and update the text
-        self.textWeight= Label(self, bg= None, fg= 'Black', text ='str(self.CValue)', font = ('Arial', 80), height = 2, relief = RIDGE )
+        self.textWeight= Label(self, bg= None, fg= 'Black', text =str(self.CValue), font = ('Arial', 80), height = 2, relief = RIDGE )
         self.textWeight.pack(side = RIGHT)
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
@@ -46,15 +46,15 @@ class Window(Frame):
 
     def selfcalibrate(self):
         #we are going to use a known weight and a magic number to calibrate the load cell. no way around this.
-        weight = self.HX7.getweight()
+        weight = self.HX7.get_weight()
         #in this line put in the reference weight
         knownweight = 1
         #leave the rest alone, the magic happens there
         self.reference = weight/knownweight
-        hx.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
+        self.HX7.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
         print(self.reference)
         self.CValue = self.reference
-        self.textWeight(text = 'str(self.CValue)')
+        self.textWeight(text = str(self.CValue))
         
     def conversion(self):
         self.weight = self.HX7.getweight()
