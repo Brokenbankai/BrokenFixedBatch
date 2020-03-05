@@ -54,7 +54,7 @@ class Window(Frame):
         self.HX7.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
         print(self.reference)
         self.CValue = self.reference
-        self.textWeight(text = str(self.CValue))
+        #self.textWeight(text = str(self.CValue))
         
     def conversion(self):
         self.weight = self.HX7.getweight()
