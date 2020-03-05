@@ -31,7 +31,7 @@ class Window(Frame):
         self.textWeight.pack(side = RIGHT)
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
-        self.HX7 = HX711(self, dout = 20, pd_sck = 21)
+        self.HX7 = HX711()
     
 
         #Buttons
