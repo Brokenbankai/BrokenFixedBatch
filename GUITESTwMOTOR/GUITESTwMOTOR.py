@@ -2,7 +2,7 @@ from tkinter import *
 from gpiozero import PWMOutputDevice as PWM, LED, Button as GP
 import csv
 # Needs to be imported as "hx" to work later on
-import hx711 as hx #pin 38 is the data pin, pin 40 is the sclk.
+#pin 38 is the data pin, pin 40 is the sclk.
 from hx711 import HX711
 class Window(Frame):
     #initializes parameters
@@ -31,6 +31,7 @@ class Window(Frame):
         self.textWeight.pack(side = RIGHT)
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
+        self.HX7 = HX711(self, dout = 20, pd_sck = 21)
     
 
         #Buttons
@@ -45,7 +46,7 @@ class Window(Frame):
 
     def selfcalibrate(self):
         #we are going to use a known weight and a magic number to calibrate the load cell. no way around this.
-        weight = hx.getweight()
+        weight = self.HX7.getweight()
         #in this line put in the reference weight
         knownweight = 1
         #leave the rest alone, the magic happens there
