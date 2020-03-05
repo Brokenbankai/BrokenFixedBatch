@@ -27,7 +27,7 @@ class Window(Frame):
        
         #Labels
         #separated for my own clarity, these are used to load and update the text
-        self.textWeight= Label(self, bg= None, fg= 'Black', text ="Weight Bared = " +str(self.CValue), font = ('Arial', 80), height = 2, relief = RIDGE )
+        self.textWeight= Label(self, bg= None, fg= 'Black', text =str(self.CValue), font = ('Arial', 80), height = 2, relief = RIDGE )
         self.textWeight.pack(side = RIGHT)
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
