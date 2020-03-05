@@ -46,12 +46,12 @@ class Window(Frame):
 
     def selfcalibrate(self):
         #we are going to use a known weight and a magic number to calibrate the load cell. no way around this.
-        weight = self.HX7.get_weight()
+        weight = max(0,int(self.HX7.get_weight_A(5)))
         #in this line put in the reference weight
         knownweight = 1
         #leave the rest alone, the magic happens there
         self.reference = weight/knownweight
-        self.HX7.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
+        #self.HX7.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
         print(self.reference)
         self.CValue = self.reference
         #self.textWeight(text = str(self.CValue))
