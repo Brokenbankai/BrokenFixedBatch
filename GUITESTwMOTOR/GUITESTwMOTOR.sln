@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GUITESTwMOTOR", "GUITESTwMOTOR.pyproj", "{038A1725-7613-4BD8-9D90-F92B82A98247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{038A1725-7613-4BD8-9D90-F92B82A98247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038A1725-7613-4BD8-9D90-F92B82A98247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B60F1507-D91C-4084-B48A-9697C899ABDE}
+	EndGlobalSection
+EndGlobal
