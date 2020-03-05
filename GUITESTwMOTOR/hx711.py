@@ -8,7 +8,7 @@ import threading
 
 class HX711:
 
-    def __init__(self, dout, pd_sck, gain=128):
+    def __init__(self, dout=20, pd_sck=21, gain=128):
         self.PD_SCK = pd_sck
 
         self.DOUT = dout
