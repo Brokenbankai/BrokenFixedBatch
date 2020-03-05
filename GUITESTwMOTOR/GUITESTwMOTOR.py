@@ -27,7 +27,7 @@ class Window(Frame):
        
         #Labels
         #separated for my own clarity, these are used to load and update the text
-        self.textWeight= Label(self, bg= None, fg= 'Black', text =str(self.CValue), font = ('Arial', 80), height = 2, relief = RIDGE )
+        self.textWeight= Label(self, bg= None, fg= 'Black', text ='str(self.CValue)', font = ('Arial', 80), height = 2, relief = RIDGE )
         self.textWeight.pack(side = RIGHT)
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
@@ -54,10 +54,10 @@ class Window(Frame):
         hx.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
         print(self.reference)
         self.CValue = self.reference
-        self.textWeight(text = '"Weight Bared = " +str(self.CValue)')
+        self.textWeight(text = 'str(self.CValue)')
         
     def conversion(self):
-        self.weight = hx.getweight()
+        self.weight = self.HX7.getweight()
         self.weight = self.weight * 2.2046
         
 #initialize the GPIO for the new driver -_- youre welcome Israel. lol. 
