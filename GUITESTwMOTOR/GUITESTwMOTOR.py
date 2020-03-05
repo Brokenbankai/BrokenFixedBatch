@@ -32,6 +32,7 @@ class Window(Frame):
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
         self.HX7 = HX711()
+        self.HX7 HX7111.set_reference_unit(35200/1.134)
     
 
         #Buttons
@@ -48,18 +49,12 @@ class Window(Frame):
         #we are going to use a known weight and a magic number to calibrate the load cell. no way around this.
         weight = max(0,int(self.HX7.get_weight_A(5)))
         #in this line put in the reference weight
-        knownweight = 1
         #leave the rest alone, the magic happens there
-        self.reference = weight/knownweight
-        #self.HX7.set_reference_unit(self.reference)#this line is how you set the referencce number you divide by this
+        self.reference = weight
+        self.reference = self.reference *2.2046
         print(self.reference)
         self.CValue = self.reference
-        #self.textWeight(text = str(self.CValue))
-        
-    def conversion(self):
-        self.weight = self.HX7.getweight()
-        self.weight = self.weight * 2.2046
-        
+                
 #initialize the GPIO for the new driver -_- youre welcome Israel. lol. 
     def initGPIO(self):
         
