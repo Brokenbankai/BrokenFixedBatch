@@ -32,7 +32,7 @@ class Window(Frame):
         self.tName= Label(self,bg= None, fg= 'Black', text = self.CName, font = ('Arial', 80), height = 2, relief = RIDGE )
         self.tName.pack(side = TOP)
         self.HX7 = HX711()
-        self.HX7 HX7111.set_reference_unit(35200/1.134)
+        self.HX7.set_reference_unit_A(reference_unit=float(-26384.03544))
     
 
         #Buttons
@@ -47,11 +47,10 @@ class Window(Frame):
 
     def selfcalibrate(self):
         #we are going to use a known weight and a magic number to calibrate the load cell. no way around this.
-        weight = max(0,int(self.HX7.get_weight_A(5)))
+        weight = self.HX7.get_weight_A(5)
         #in this line put in the reference weight
         #leave the rest alone, the magic happens there
-        self.reference = weight
-        self.reference = self.reference *2.2046
+        self.reference = weight * float(2.2046)
         print(self.reference)
         self.CValue = self.reference
                 
